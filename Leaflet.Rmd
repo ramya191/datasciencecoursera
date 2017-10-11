@@ -1,0 +1,36 @@
+---
+title: "R Markdown and Leaflet"
+author: "Ramya1"
+date: "October 10, 2017"
+output: html_document
+runtime: shiny
+---
+
+##Instructions
+
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+```{r setup, include=TRUE}
+library(leaflet)
+library(shiny)
+
+my_map <- leaflet() %>% addTiles( ) 
+
+my_map <- my_map %>% addTiles( "My favorite places in Bogotá" ) 
+
+my_map <- my_map %>% addMarkers(lat=4.6454199, lng=-74.0618655, popup="Parque de los Hippies, Bogotá - Colombia")
+my_map <- my_map %>% addMarkers(lat=4.6056728, lng= -74.0577142, popup="Monserrate, Bogotá - Colombia")
+
+my_map <- my_map %>% addMarkers(lat=4.5968179, lng= -74.0753402, popup="Museo de Botero, Bogotá - Colombia")
+
+my_map <- my_map %>% addMarkers(lat=4.5981259, lng= -74.0782322, popup="Plaza Bolivar, Bogotá - Colombia")
+
+my_map <- my_map %>% addMarkers(lat=4.5981561, lng= -74.0776482,  popup="Catedral Primada de Colombia, Bogotá - Colombia")
+
+my_map
+```
+
